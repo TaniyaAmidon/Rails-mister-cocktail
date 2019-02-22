@@ -1,9 +1,8 @@
 <h1>Cocktails</h1>
-<%= cl_image_tag("ehvvultpsjglt8uibwos",
-      width: 400, height: 300, crop: :fill) %>
 
 <% @cocktails.each do |cocktail| %>
     <p><%= link_to cocktail.name , cocktail_path(cocktail) %></p>
+    <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
 
 
