@@ -9,9 +9,9 @@
   <%  @cocktail.doses.each do |dose| %>
   <div class="card-product">
     <%= dose.description %>
-    <%= link_to "Delete", dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?"} %>
     <%= dose.ingredient.name %>
     <%= dose.amount %>
+    <%= link_to "Delete", dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?"} %>
   </div>
   <% end %>
 </p>
