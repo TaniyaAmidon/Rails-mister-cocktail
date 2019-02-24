@@ -11,16 +11,17 @@
           <h2><strong>Mix it:</strong></h2>
           <ul>
             <%  @cocktail.doses.each do |dose| %>
-            <li><%= dose.ingredient.name %>: <%= dose.description %></li>
-
-            <!-- <p><%= dose.amount %></p> -->
-            <%= link_to "Delete", dose_path(dose.id) , class: "btn btn-flat-sm", method: :delete, data: { confirm: "Are you sure?"} %>
+            <div class= "d-flex justify-content-between">
+              <li><%= dose.ingredient.name %>: <%= dose.description %> </li>
+              <%= link_to "Delete", dose_path(dose.id) , class: "btn btn-flat-sm", method: :delete, data: { confirm: "Are you sure?"} %>
+            </div>
           <% end %>
         </ul>
         </div>
       </div>
-
+    <div class="links d-flex justify-content-between" >
     <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-flat" %>
     <%= link_to "Cancel", cocktails_path, class: "btn btn-cancel" %>
+    </div>
   </div>
 </div>
