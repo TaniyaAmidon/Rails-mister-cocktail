@@ -1,21 +1,26 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1571&q=80);">
+
   <div class="container">
-    <h1>Mister Cocktails OZ</h1>
-    <p><strong>Best cocktails</strong> in town </p>
+    <h1>Mister Cocktail</h1>
+    <p> Make your favourite cocktail at home <i class="fas fa-cocktail small"></i> </p>
   </div>
 </div>
 
-<h2>Cocktail list</h2>
+<div class="container">
+  <h2>Cocktail list</h2>
 
-<div class="cards">
-<% @cocktails.each do |cocktail| %>
-<div class="card-category">
-    <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
-    <p><%= link_to cocktail.name , cocktail_path(cocktail) %></p>
-</div>
-  <% end %>
-</div>
-<div>
-  <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-flat" %>
-</div>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card-category">
+      <a href=<%= cocktail_path(cocktail) %>>
+      <%= cl_image_tag cocktail.photo, height: 300, width: 400, crop: :fill %>
+    </a>
+      <p><%= link_to cocktail.name.capitalize , cocktail_path(cocktail) %></p>
+    </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-flat" %>
+  </div>
 
+</div>

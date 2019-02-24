@@ -18,6 +18,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+
 }
 
 .card-product p {
@@ -31,3 +32,53 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card-category{
+    text-align: center;
+}
+
+.card-category img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.card-category a {
+  text-decoration: none;
+  color: #babbba;
+  font-size: 24px;
+
+}
+
+.container h2 {
+//  text-align: center;
+  margin-top: 12px;
+  padding: 24px;
+  font-size: 32px;
+  font-weight: 500;
+  padding-left: 0;
+  color: #babbba;
+}
+
+.card-info {
+  color: white;
+}
+
+.card-description {
+  padding-left :30px;
+}
+
+.card-description h2 {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+}
+
+// .card-description p {
+//   border-bottom: 1px solid #fff;
+// }
+
+.card-description a {
+  text-decoration: none;
+  color: #fff;
+
+}
+

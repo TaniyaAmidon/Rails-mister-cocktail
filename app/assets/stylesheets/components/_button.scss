@@ -1,12 +1,32 @@
 .btn-flat {
   color: white;
-  padding: 8px 24px;
+  padding: 8px 40px;
   border-radius: 4px;
-  background: #1EDD88;
-  transition: background 0.3s ease;
+  background: #f19233;
+  transition: color 0.4s ease;
 }
 
 .btn-flat:hover {
-  background: #1BCB7F;
+  color: black;
+}
+
+
+.btn-flat-sm {
   color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: #f19233;
+  transition: color 0.4s ease;
+}
+
+.btn-flat:hover {
+  color: black;
+}
+
+.btn-cancel {
+  color: white;
+  padding: 8px 56px;
+  border-radius: 4px;
+  background: #f19233;
+  transition: color 0.4s ease;
 }

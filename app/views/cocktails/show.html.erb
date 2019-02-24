@@ -1,22 +1,24 @@
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1509807995916-c332365e2d9e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1571&q=80);">
+  <div class="container">
+      <h1>
+        <%= @cocktail.name.capitalize %>
+      </h1>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%  @cocktail.doses.each do |dose| %>
-  <div class="card-product">
-    <%= dose.description %>
-    <%= dose.ingredient.name %>
-    <%= dose.amount %>
-    <%= link_to "Delete", dose_path(dose.id), method: :delete, data: { confirm: "Are you sure?"} %>
+      <div class="card-info d-flex ">
+        <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
+
+        <div class="card-description">
+          <h2><strong>Mix it:</strong></h2>
+          <%  @cocktail.doses.each do |dose| %>
+            <p><%= dose.ingredient.name %></p>
+            <p><%= dose.description %></p>
+            <!-- <p><%= dose.amount %></p> -->
+            <%= link_to "Delete", dose_path(dose.id) , class: "btn btn-flat-sm", method: :delete, data: { confirm: "Are you sure?"} %>
+          <% end %>
+        </div>
+      </div>
+
+    <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-flat" %>
+    <%= link_to "Cancel", cocktails_path, class: "btn btn-cancel" %>
   </div>
-  <% end %>
-</p>
-
-
-
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-flat" %>
-<%= link_to "Back", cocktails_path, class: "btn btn-flat" %>
+</div>
